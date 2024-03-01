@@ -53,6 +53,11 @@ nav {
 
 nav h1 a {
     font-family: var(--sans);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
 }
 
 nav ul {
@@ -72,9 +77,33 @@ nav li:first-child {
 }
 
 nav [class*="fa-"] {
-    width: 1.75rem;
+    width: 1.5rem;
     height: auto;
-    fill: var(--aqua);
+    display: block;
+}
+
+nav [class*="github"]:hover {
+    content: url(../assets/images/square-github-magenta.svg);
+}
+
+nav [class*="linkedin"]:hover {
+    content: url(../assets/images/linkedin-magenta.svg);
+}
+
+nav [class*="name"]:hover {
+    content: url(../assets/images/terminal-solid-magenta.svg);
+}
+
+/* screen readers only */
+.sr-only {
+    border: 0;
+    clip: rect(0,0,0,0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px
 }
 
 nav a {
@@ -87,10 +116,41 @@ nav a:hover {
     color: var(--magenta);
 }
 
+.button {
+    background-color: var(--magenta);
+    color: var(--white);
+    padding: 0.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: var(--mono);
+}
+
+.button:hover {
+    color: var(--white);
+    background-color: var(--hotmag);
+}
+
+/* background color divs */
+
+.section-plum {
+    background-color: var(--plum);
+}
+
+.gradient {
+    background: linear-gradient(90deg, rgba(255,23,228,1) 0%, rgba(134,251,251,1) 100%);
+    height: 2px;
+}
+
+.section-blue {
+    background-color: var(--dkblue);
+}
+
 /* intro styles */
 
 #intro {
-    padding-bottom: 10rem;
+    padding: 4rem 1rem 10rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 #intro p {
@@ -116,19 +176,95 @@ nav a:hover {
 
 /* project styles */
 
+#projects {
+    padding: 4rem 1rem;
+}
 
+#projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: calc(2.5rem * 1.5);
+}
 
+#projects h3 {
+    color: var(--aqua);
+}
+
+#projects h4 {
+    font-size: 1rem;
+    font-family: var(--mono);
+    margin: 0;
+}
 
 /* contact styles */
 
 #contact {
-    width: 400px;
+    width: 500px;
     text-align: center;
     margin: 0 auto;
     padding: 3rem 0;
-    background-color: var(--plum);
 }
 
 #contact p:last-child {
     margin-top: 3rem;
+}
+
+/* footer styles */
+
+footer {
+    font-family: var(--sans);
+    font-size: 80%;
+    width: 500px;
+    padding: 4rem 0;
+    margin: 0 auto;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+footer li:first-child,
+footer li:last-child {
+    flex-basis: 100%;
+    text-align: center;
+    font-size: var(--font-size);
+}
+
+footer [class*="fa-"] {
+    width: 3rem;
+    height: auto;
+    display: block;
+}
+
+footer [class*="github"]:hover {
+    content: url(../assets/images/square-github-hotmag.svg);
+}
+
+footer [class*="linkedin"]:hover {
+    content: url(../assets/images/linkedin-hotmag.svg);
+}
+
+footer [class*="mail"]:hover {
+    content: url(../assets/images/envelope-solid-hotmag.svg);
+}
+
+/* media queries */
+
+@media (min-width: 850px) {
+    nav {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    nav li:first-child {
+        flex-basis: auto;
+        text-align: left;
+        margin-right: auto;
+    }
 }
